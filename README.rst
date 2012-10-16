@@ -1,7 +1,6 @@
 lizard-raster
 ==========================================
 
-Introduction
+Access raster database.
 
-Usage, etc.
-
+Reusable parts from lizard-damage.
