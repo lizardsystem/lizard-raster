@@ -5,7 +5,7 @@ Changelog of lizard-raster
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Removed dependency on lizard-ui.
 
 
 0.1 (2012-10-23)
