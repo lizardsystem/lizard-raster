@@ -96,9 +96,10 @@ class AhnIndex(models.Model):
 
 
     @classmethod
-    def get_ahn_indices(cls, ds):
+    def get_ahn_indices(cls, ds=None, polygon=None):
         """ Return the ahn index objects that cover this dataset. """
-        polygon = raster.get_polygon(ds)
+        if polygon is None:
+            polygon = raster.get_polygon(ds)
         ahn_indices = cls.objects.filter(
             the_geom__intersects=polygon,
             )
