@@ -39,6 +39,10 @@ def reproject(ds_source, ds_match):
 def get_polygon(ds):
     """
     Make a polygon for the bounds of a gdal dataset
+
+    This is a bit dirty: The polygon is used to retrieve ahn tiles. We
+    make the polygon a bit smaller to prevent adding unnecessary ahn
+    tiles.
     """
     gs = ds.GetGeoTransform()
     x1 = gs[0]
@@ -46,11 +50,11 @@ def get_polygon(ds):
     y2 = gs[3]
     y1 = y2 + ds.RasterYSize * gs[5]
     coordinates = (
-        (x1, y1),
-        (x2, y1),
-        (x2, y2),
-        (x1, y2),
-        (x1, y1),
+        (x1 + 10, y1 + 10),
+        (x2 - 10, y1 + 10),
+        (x2 - 10, y2 - 10),
+        (x1 + 10, y2 - 10),
+        (x1 + 10, y1 + 10),
     )
     return Polygon(coordinates, srid=28992)
 
