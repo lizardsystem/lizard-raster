@@ -2,7 +2,7 @@ Changelog of lizard-raster
 ===================================================
 
 
-0.3 (unreleased)
+0.3 (2012-11-27)
 ----------------
 
 - Updated get_polygon function. Now works with flooding task 221.
